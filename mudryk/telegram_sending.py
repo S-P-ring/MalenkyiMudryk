@@ -7,15 +7,13 @@ from telethon.tl.functions.contacts import ResolveUsernameRequest
 from telethon.tl.types import InputPhoneContact
 from telethon import functions, types
 from telethon.sessions import StringSession
-from dotenv import load_dotenv
 
-load_dotenv()
 
-API_ID = int(os.getenv('API_ID'))
-API_HASH = os.getenv('API_HASH')
-PHONE_NUMBER = os.getenv('PHONE_NUMBER')
-INVITE_LINK = os.getenv('INVITE_LINK')
-PATH_TO_SESSION = os.getenv('PATH_TO_SESSION')
+API_ID = int('17581406')
+API_HASH = 'f85dde0b874501dca5509226b7d6d02f'
+PHONE_NUMBER = '+380933223863'
+INVITE_LINK = 'https://t.me/+8XIBKxOd6B8zOTBi'
+PATH_TO_SESSION = 'mudryk/+380933223863'
 
 
 # def login():
