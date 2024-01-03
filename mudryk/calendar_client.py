@@ -4,12 +4,12 @@ import os
 from google.oauth2 import service_account
 from googleapiclient.discovery import build
 
-CALENDAR_ID = 'mudrikmalenkij@gmail.com'
+CALENDAR_ID = os.getenv("CALENDAR_ID")
 
 
 class GoogleCalendar:
-    SCOPES = ['https://www.googleapis.com/auth/calendar']
-    FILE_PATH = 'mudryk/malenkiymudryk-a4217d9b388f.json'
+    SCOPES = [os.getenv("SCOPES")]
+    FILE_PATH = os.getenv("FILE_PATH")
 
     def __init__(self):
         credentials = service_account.Credentials.from_service_account_file(
