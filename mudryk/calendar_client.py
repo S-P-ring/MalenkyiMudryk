@@ -7,12 +7,12 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-CALENDAR_ID = os.getenv('CALENDAR_ID')
+CALENDAR_ID = 'mudrikmalenkij@gmail.com'
 
 
 class GoogleCalendar:
-    SCOPES = [os.getenv('SCOPES')]
-    FILE_PATH = os.getenv('FILE_PATH')
+    SCOPES = ['https://www.googleapis.com/auth/calendar']
+    FILE_PATH = 'mudryk/malenkiymudryk-a4217d9b388f.json'
 
     def __init__(self):
         credentials = service_account.Credentials.from_service_account_file(
