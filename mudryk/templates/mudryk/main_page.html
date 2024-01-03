@@ -1,0 +1,125 @@
+{% extends "mudryk/base.html" %}
+{% load static %}
+
+    {% block title %}
+        <title>Головна</title>
+    {% endblock %}
+  {% block stylesheet %}
+      <link rel="stylesheet" href="{% static 'mudryk/css/main_page.css' %}">
+  {% endblock %}
+
+{% block content %}
+    <div class="row-main-title">
+        <div class="column-1">
+            <img class='main-photo 'src="{% static 'mudryk/images/0.png' %}" alt="Фото">
+        </div>
+        <div class="column-1">
+            <h3 class="tagline">{{ main_info.tagline }}</h3>
+            <h4 class="center_mission">{{ main_info.center_mission }}</h4>
+        </div>
+    </div>
+
+    <div>
+    <div class="row-1">
+    <div class="column-1">
+    <h3 class="reason_to_choose_title">Чому варто обрати онлайн-навчання в нашому центрі?</h3>
+        <ul class="reasons_to_choose">
+            {% for reason_to_choose in main_info.reasons_to_choose.all %}
+            <li class="reason_to_choose"><p>{{ reason_to_choose}}</p></li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="column-2">
+        <img class='photo-1' src="{% static 'mudryk/images/4.png' %}" alt="Фото">
+    </div>
+    </div>
+
+    <div class="row-2">
+        <div class="column-2">
+            <img class='photo-2' src="{% static 'mudryk/images/8.png' %}" alt="Фото">
+        </div>
+        <div class="column-1">
+            <h3 class="advantages-title">Наші переваги:</h3>
+            <ul class="advantages">
+            {% for advantege in main_info.advantages.all %}
+            <li class="advantages-item"><p>{{ advantege}}</p></li>
+            {% endfor %}
+        </ul>
+        </div>
+    </div>
+
+    <div class="row-1">
+        <div class="column-1">
+            <h3 class="discount-title">Надаємо знижку 10% для пільгових категорій:</h3>
+            <ul class="discounts">
+            {% for discount in main_info.discounts.all %}
+            <li class="discounts-item"><p>{{ discount}}</p></li>
+            {% endfor %}
+        </ul>
+        </div>
+        <div class="column-2">
+            <img class='photo-3' src="{% static 'mudryk/images/5.png' %}" alt="Фото">
+        </div>
+    </div>
+
+    <div class="row-2">
+        <div class="column-2">
+            <img class='photo-2' src="{% static 'mudryk/images/8.png' %}" alt="Фото">
+        </div>
+        <div class="column-1">
+            <h3 class="advantages-title">Долучайтесь, адже центр розвитку дитини-онлайн «Маленький Мудрик» - це:</h3>
+            <ul class="advantages">
+            {% for description in main_info.descriptions.all %}
+            <li class="advantages-item"><p>{{ description}}</p></li>
+            {% endfor %}
+        </ul>
+        </div>
+    </div>
+
+    <div class="row-1">
+        <div class="column-1">
+            <h3 class="discount-title">БАТЬКАМ</h3>
+            <ul class="discounts">
+            {% for info in main_info.info_for_parents.all %}
+            <li class="discounts-item"><p>{{info.title}} {{ info}}</p>
+            {% endfor %}
+        </ul>
+        </div>
+        <div class="column-2">
+            <img class='photo-3' src="{% static 'mudryk/images/5.png' %}" alt="Фото">
+        </div>
+    </div>
+
+    </div>
+
+{% endblock %}
+
+{% block footer %}
+<div class="footer">
+    <div class="row-footer">
+        <div class="column-1-footer">
+            <p class="contact-title">Контакти</p>
+            <li class="contact-list">
+                {% for phone in contact.phones.all %}
+                    <ul class="contact-item">{{ phone }}</ul>
+                {% endfor %}
+            </li>
+
+            <p class="contact-title">Email</p>
+            <li class="contact-list">
+                <ul class="contact-item">{{ contact.email }}</ul>
+            </li>
+        </div>
+        <div class="column-2-footer">
+            <div class="social-links">
+                <a class="social-link" href="{{ contact.facebook_link}}">
+                    <img src="{% static 'mudryk/images/icons8-facebook-48.png' %}" alt="Facebook">
+                </a>
+                <a class="social-link" href="{{ contact.instagram_link}}">
+                    <img src="{% static 'mudryk/images/icons8-instagram-48.png' %}" alt="Instagram">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

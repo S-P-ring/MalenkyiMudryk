@@ -1,0 +1,108 @@
+{% extends "mudryk/base.html" %}
+{% load static %}
+{% load mudryk_extras %}
+
+    {% block title %}
+        <title>Наша команда</title>
+    {% endblock %}
+    {% block stylesheet %}
+      <link rel="stylesheet" href="{% static 'mudryk/css/our_team.css' %}">
+    {% endblock %}
+
+
+{% block content %}
+     <div class="row-main-title">
+         <div class="column-1"></div>
+            <div class="column-2">
+                <p class="title">Наша команда</p>
+            </div>
+         <div class="column-3"></div>
+     </div>
+
+    <div class="row-our-team">
+        <div class="column-4"></div>
+            <div class="column-5">
+            <div class="table">
+                <div class="row-our-team-table">
+                    {% for member in members %}
+                         <div class="row-table">
+                            {% if member|length >= 1 %}
+                                <div class="team-member-cell">
+                                    {% if member.0 %}
+                                    <img src="{{ member.0.photo.url }}" alt="фото вчителя">
+                                        {% endif %}
+                                        <p class="member-name">{{ member.0.name }}</p>
+                                        <p class="member-description">{{ member.0.description }}</p>
+                                </div>
+                            {% endif %}
+
+                            {% if member|length >= 2 %}
+                                <div class="team-member-cell">
+                                    <div class="member-card">
+                                        {% if member.1 %}
+                                            <img src="{{ member.1.photo.url }}" alt="фото вчителя">
+                                        {% endif %}
+                                        <p class="member-name">{{ member.1.name }}</p>
+                                        <p class="member-description">{{ member.1.description }}</p>
+                                    </div>
+                                </div>
+                            {% else %}
+                                <div class="team-member-cell">
+                                    <p></p>
+                                </div>
+                            {% endif %}
+
+                            {% if member|length >= 3 %}
+                                <div class="team-member-cell">
+                                    <div class="member-card">
+                                        {% if member.2 %}
+                                        <img class="member-photo" src="{{ member.2.photo.url }}" alt="фото вчителя">
+                                        {% endif %}
+                                        <p class="member-name">{{ member.2.name }}</p>
+                                        <p class="member-description">{{ member.2.description }}</p>
+                                    </div>
+                                </div>
+                            {% else %}
+                                <div class="team-member-cell">
+                                    <p></p>
+                                </div>
+                            {% endif %}
+                         </div>
+                    {% endfor %}
+                </div>
+            </div>
+            </div>
+    <div class="column-6"></div>
+     </div>
+
+{% endblock %}
+
+{% block footer %}
+<div class="footer">
+    <div class="row-footer">
+        <div class="column-1-footer">
+            <p class="contact-title">Контакти</p>
+            <li class="contact-list">
+                {% for phone in contact.phones.all %}
+                    <ul class="contact-item">{{ phone }}</ul>
+                {% endfor %}
+            </li>
+
+            <p class="contact-title">Email</p>
+            <li class="contact-list">
+                <ul class="contact-item">{{ contact.email }}</ul>
+            </li>
+        </div>
+        <div class="column-2-footer">
+            <div class="social-links">
+                <a class="social-link" href="{{ contact.facebook_link}}">
+                    <img src="{% static 'mudryk/images/icons8-facebook-48.png' %}" alt="Facebook">
+                </a>
+                <a class="social-link" href="{{ contact.instagram_link}}">
+                    <img src="{% static 'mudryk/images/icons8-instagram-48.png' %}" alt="Instagram">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

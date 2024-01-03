@@ -1,0 +1,62 @@
+{% extends "mudryk/base.html" %}
+{% load static %}
+
+
+    {% block title %}
+        <title>FaQ</title>
+    {% endblock %}
+    {% block stylesheet %}
+        <link rel="stylesheet" href="{% static 'mudryk/css/faq.css' %}">
+    {% endblock %}
+
+{% block content %}
+    <div class="row-main-title">
+        <div class="column-1"></div>
+        <div class="column-2">
+            <p class="title">Відповіді на частіші запитання</p>
+        </div>
+        <div class="column-3"></div>
+    </div>
+
+    {% for faq in faqs %}
+            <button class="accordion">{{ faq }}</button>
+            <div class="panel">
+                <p>{{ faq.answer }}</p>
+            </div>
+    {% endfor %}
+
+{% endblock %}
+
+{% block js_bottom %}
+     <script type="text/javascript" src="{% static 'mudryk/js/faq.js' %}"></script>
+{% endblock %}
+
+{% block footer %}
+<div class="footer">
+    <div class="row-footer">
+        <div class="column-1-footer">
+            <p class="contact-title">Контакти</p>
+            <li class="contact-list">
+                {% for phone in contact.phones.all %}
+                    <ul class="contact-item">{{ phone }}</ul>
+                {% endfor %}
+            </li>
+
+            <p class="contact-title">Email</p>
+            <li class="contact-list">
+                <ul class="contact-item">{{ contact.email }}</ul>
+            </li>
+        </div>
+        <div class="column-2-footer">
+            <div class="social-links">
+                <a class="social-link" href="{{ contact.facebook_link}}">
+                    <img src="{% static 'mudryk/images/icons8-facebook-48.png' %}" alt="Facebook">
+                </a>
+                <a class="social-link" href="{{ contact.instagram_link}}">
+                    <img src="{% static 'mudryk/images/icons8-instagram-48.png' %}" alt="Instagram">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

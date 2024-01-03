@@ -1,0 +1,170 @@
+.row-main-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.column-1 {
+    width: 70%;
+    padding: 10px;
+}
+
+.column-2 {
+    width: 30%;
+    padding: 10px;
+}
+
+.main-photo {
+    max-width: 100%;
+    max-height: 500px;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+.tagline {
+    font-family: Nautilus;
+    font-size: xxx-large;
+    padding-top: 45px;
+    padding-left: 30px;
+    padding-right: 20px;
+}
+
+.center_mission {
+    font-size: xx-large;
+    padding-top: 100px;
+    padding-left: 0;
+    padding-right: 20px;
+}
+
+.reason_to_choose_title {
+    font-family: Nautilus;
+    font-size: xxx-large;
+    padding-left: 30px;
+    padding-top: 20px;
+}
+
+.reasons_to_choose {
+    list-style: none;
+    padding-top: 25px;
+}
+
+.reason_to_choose {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 20px;
+    font-size: x-large;
+}
+
+.reason_to_choose::before {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  min-height: 20px;
+  min-width: 20px;
+  background-color: #FDE790;
+  border-radius: 50%;
+  margin-right: 20px;
+  margin-top: 4px;
+}
+
+.row-1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.photo-1 {
+    max-width: 100%;
+    max-height: 500px;
+    padding-left: 0;
+}
+
+.advantages-title {
+    font-family: Nautilus;
+    font-size: xxx-large;
+    padding-left: 30px;
+    padding-top: 20px;
+    text-align: center;
+    padding-right: 200px;
+}
+
+.row-2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.photo-2 {
+    max-width: 100%;
+    max-height: 500px;
+    padding-left: 40px;
+}
+
+.advantages {
+    list-style: none;
+    padding-top: 25px;
+    padding-right: 40px;
+}
+
+.advantages-item {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 20px;
+    font-size: x-large;
+}
+
+.advantages-item::before {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  min-height: 20px;
+  min-width: 20px;
+  background-color: #FDE790;
+  border-radius: 50%;
+  margin-right: 20px;
+  margin-top: 4px;
+}
+
+.discount-title {
+    font-family: Nautilus;
+    font-size: xxx-large;
+    padding-left: 30px;
+    padding-top: 20px;
+}
+
+.discounts {
+    list-style: none;
+    padding-top: 25px;
+    padding-right: 40px;
+}
+
+.discounts-item {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 20px;
+    font-size: x-large;
+}
+
+.discounts-item::before {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  min-height: 20px;
+  min-width: 20px;
+  background-color: #FDE790;
+  border-radius: 50%;
+  margin-right: 20px;
+  margin-top: 4px;
+}
+
+.photo-3 {
+    max-width: 100%;
+    max-height: 500px;
+    padding-left: 40px;
+}
+
+
+

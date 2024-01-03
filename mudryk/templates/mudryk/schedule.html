@@ -1,0 +1,131 @@
+{% extends "mudryk/base.html" %}
+{% load static %}
+
+
+{% block title %}
+    <title>Розклад уроків</title>
+{% endblock %}
+{% block stylesheet %}
+    <link rel="stylesheet" href="{% static 'mudryk/css/schedule.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="row-main-title">
+        <div class="column-1"></div>
+        <div class="column-2">
+            <p class="title">Розклад уроків</p>
+        </div>
+        <div class="column-3"></div>
+    </div>
+
+    <div class="forms-container" id="form-container">
+    <form action="#" method="post" id="course-form">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="selectOption">Виберіть курс:</label>
+            <select class='course-select' id="selectOption" name="selected_option">
+                {% for course in course_list %}
+                    <option value="{{ course }}">{{ course }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <button type="submit" class="btn-next">Далі</button>
+    </form>
+
+    <form action="#" method="post" class="course-day-form" id="course-day-form">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="selectOption">Виберіть день:</label>
+            <select class='course-select' id="selectOption" name="selected_option">
+                {% for course in course_list %}
+                    <option value="option1">{{ course }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <button type="submit" class="btn-next">Далі</button>
+    </form>
+
+    <form action="#" method="post" class="course-time-form" id="course-time-form">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="selectOption">Виберіть час:</label>
+            <select class='course-select' id="selectOption" name="selected_option">
+                {% for course in course_list %}
+                    <option value="option1">{{ course }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <button type="submit" class="btn-next">Далі</button>
+    </form>
+
+    <form action="#" method="post" class="record-form" id="record-form">
+        {% csrf_token %}
+
+        <div class="form-group">
+
+            <label for="name">Им'я та прізвище батька:</label>
+            <input type="text" class="form-control" id="parent-name" name="parent-name"
+                   title="Ім'я повинно містити букви і не перевищувати 80 символів" required>
+        </div>
+
+        <div class="form-group">
+
+            <label for="name">Им'я та прізвище дитини:</label>
+            <input type="text" class="form-control" id="child-name" name="child-name"
+                   title="Ім'я повинно містити букви і не перевищувати 80 символів" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+            <label for="phone_number">Номер телефона:</label>
+            <input type="tel" class="form-control" id="phone" name="phone_number" pattern="\d{10,16}"
+                   title="Номер телефона повинен містити 10-16 цифр">
+        </div>
+
+        <button type="submit" class="btn-record">Записатися</button>
+    </form>
+    </div>
+
+    <div class="success-container" id="success-message">
+        <h1>Вас успішно записано!</h1>
+    </div>
+
+{% endblock %}
+
+{% block js_bottom %}
+     <script type="text/javascript" src="{% static 'mudryk/js/schedule.js' %}"></script>
+{% endblock %}
+
+{% block footer %}
+<div class="footer">
+    <div class="row-footer">
+        <div class="column-1-footer">
+            <p class="contact-title">Контакти</p>
+            <li class="contact-list">
+                {% for phone in contact.phones.all %}
+                    <ul class="contact-item">{{ phone }}</ul>
+                {% endfor %}
+            </li>
+
+            <p class="contact-title">Email</p>
+            <li class="contact-list">
+                <ul class="contact-item">{{ contact.email }}</ul>
+            </li>
+        </div>
+        <div class="column-2-footer">
+            <div class="social-links">
+                <a class="social-link" href="{{ contact.facebook_link}}">
+                    <img src="{% static 'mudryk/images/icons8-facebook-48.png' %}" alt="Facebook">
+                </a>
+                <a class="social-link" href="{{ contact.instagram_link}}">
+                    <img src="{% static 'mudryk/images/icons8-instagram-48.png' %}" alt="Instagram">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,133 @@
+@font-face {
+    font-family: 'Montserrat';
+    src: url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;700;900&display=swap');
+}
+
+@font-face {
+    font-family: 'Nautilus';
+    src: url('fonts/Nautilus.otf');
+}
+
+
+* {
+    margin: 0;
+    font-family: Montserrat;
+}
+
+html, body {
+  height: 100%;
+  background-color: #F8F1EC;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.content-wrap {
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: auto;
+}
+
+.navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #E8CBA0;
+}
+
+.navbar-item {
+    background-color: #E8CBA0;
+    display: inline;
+    float: left;
+    padding-top: 3px;
+    border-radius: 1%;
+}
+
+.navbar-title {
+    font-family: Nautilus;
+    font-size: larger;
+    font-weight: normal;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    background-color: #E8CBA0;
+}
+
+.navbar-button {
+    font-size: larger;
+    font-weight: normal;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    background-color: #E8CBA0;
+}
+
+.navbar-button:hover {
+    color: #2f2005;
+    background-color: #FDE6BA;
+}
+
+.content {
+    padding: 10px;
+    margin: 10px;
+}
+
+.footer {
+  background-color: #E8CBA0;
+  height: 140px;
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: auto;
+}
+
+.contact-title {
+    font-weight: bold;
+    padding-top: 5px;
+    color: white;
+    margin-left: 5%;
+    font-size: large;
+    margin-bottom: 5px;
+}
+
+.contact-list {
+    margin-left: 20px;
+    list-style-type: none;
+}
+
+.contact-item {
+    font-size: large;
+    color: white;
+    margin-bottom: 3px;
+}
+
+.row-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.column-1-footer {
+    width: 80%;
+}
+
+.column-2-footer {
+    width: 20%;
+}
+
+.social-links {
+    margin-left: 180px;
+    margin-top: 10px;
+}
+
+.social-link {
+    margin-bottom: 5px;
+    display: block;
+}

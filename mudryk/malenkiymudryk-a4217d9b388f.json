@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "malenkiymudryk",
+  "private_key_id": "a4217d9b388ff483cb7fb9757f938c19089c53a1",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCgajTLkMM6LeM+\nmjy8bPlvRHThPK3u1405nG40j58NB5bo47gVkpBHnwjz5YjZCAuRp69HvD/iGv0l\n5w9h1foD25I27zUNWkguvotl1o/E90o6HGUMJ73qaEPB7gIFwDpuYLe2hDcDgHBz\nvKXlI6uqJX1TNHesAzPV/Ef1XOcOw+qNlygj/hTIYYo8soORIa0O8GaYbLetMfzJ\nwFR0zB2ddMA2QV3FCpbwMdq+oB1VBbMYYzG6DoRTV0mJOpPqkYBL0qRnqfktUarQ\nGUymqZ1kJ41s9nftZoYmLSiulA42frmjZTArSDWdmK+AN4G1eYRCpMy0dQbBG/hJ\nV4QDqKadAgMBAAECggEAAtYV5GKFHSZ6Dd2OxNsdZur8MQ5QWfh8MgBSz4GZk5Km\nh6wdEV6Tx/xnHV7Z1lKG19ax6fAJZh9Jig3FjxqILuDHO0rr8nY97/uk/dI3HQmt\nSY0+eSJLwJUC268wYHcnYVO689JvIZP4CQfVHBHPI3VBu8Kh+gvdcwNgp1Uy7acg\neCfDgww27k/RfO9VE8TsDztscAaegHmFzPCf5N1DIib9iJNFJzXXoDROkbK6RPC3\nenH2bFINgKnI66NXcnRXd1ajo+q0U3VToPC3jOPssiX/NfDr/xOR7SwIFlD9iDig\nzaLpRFGM9J8Of6C+MbrGHECw4oZcrShtxxrC3C+keQKBgQDNAb8nYPbEDK65PnQN\n9v97DfAOvFeD5IbT9K2XQ2gycQg7r6euGLJ8/KgF0pKVOSQRZpJzE8BWZWDYdx+j\nInF0yUhY0SgivChc1Kf5QI+ighfT3n0Ft9p4seIGyLWWDS+kd2BYYHqX+0iFkamP\n0PezdXL/nWPnNqVrA6R9Eam9CQKBgQDIUPhjHcejPm7Cd2hEbFixHR49zShclFvJ\nH6cg8bqF14FMj7OmZgjvW3HM97JLtAxmLI3HCZ4jm9MTI2PiFHJ38hXe/VP/KtE+\n5m7z7zFS9jvUvo1X60z6H/auRp5Eo3JQtXGdsVOMQNN6lb5P50aWThgyx5a9cc5w\np53vtE0V9QKBgBaejbfLlA6Xk6Oux2FPEmtCY21MzJ8p1NKIGasp7dI69HyZaffk\nk7UEr4lM7Y13a4pb9eaqlDs0HlZj9mKqhzgqiUf7c+E5P37Wm939iJuWnQhscQDz\ngzBz+Atlk9uFgu8zmLbHll80g5DxPHM4zEvJtrGLbR1ywxempDyEeWT5AoGBAKCx\nw/DPTP258eRzIePx/txmfYIaeIx8P32CtPIKuRTxoromdXnBVN2fQBWrhw6P63pz\nt3C6WHA8awFpXJFa0dFDFSSDmMSUNrP863kooyroeWrbSkwDaQcmaR+5avGpJOV2\nCST1wg47Wut2AOvcnpWpJGRoFJb5GyDodhx7SXOZAoGASzFzOkJHjPJPPnOzvozT\nyKTaFp0hfvWO445U0lwUA1iPz3Vjd+01Bx0buG/NG3dgfRcLTkg0cjcQkXfJaOM2\nblatZBfe7KjAFG5rMM6bB7sSXDLCb0iiqajeqnJ2rmu8dvr9K0OgF/HyPwVGt068\n6XrJVXOVru/S3tLUWyRVJF0=\n-----END PRIVATE KEY-----\n",
+  "client_email": "malenkiymudryk@malenkiymudryk.iam.gserviceaccount.com",
+  "client_id": "116110035155897793753",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/malenkiymudryk%40malenkiymudryk.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

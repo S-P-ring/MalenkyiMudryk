@@ -1,0 +1,112 @@
+{% extends "mudryk/base.html" %}
+{% load static %}
+
+
+{% block title %}
+    <title>FaQ</title>
+{% endblock %}
+{% block stylesheet %}
+    <link rel="stylesheet" href="{% static 'mudryk/css/feedback.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="row-main-title">
+        <div class="column-1"></div>
+        <div class="column-2">
+            <p class="title">Відгуки та пропозиції</p>
+        </div>
+        <div class="column-3"></div>
+    </div>
+
+    <div class="feedback-list" id="feedback-list">
+        {% for feedback in feedback_list %}
+            <div class="feedback-item">
+                <p class="feedback-paragraph">{{ feedback.name }}</p>
+                <p>{{ feedback.created_date }}</p>
+                <p>{{ feedback.feedback_text }}</p>
+            </div>
+        {% endfor %}
+
+        {% if feedback_list.has_next %}
+
+        {% else %}
+            <button class="load-more" id="load-more">Завантажити ще</button>
+        {% endif %}
+    </div>
+
+    <form class="feedback-form" action="#" method="post" id="feedbackForm">
+        {% csrf_token %}
+
+        <div class="form-group">
+            <label for="selectOption">Виберіть, що ви хочете залишити:</label>
+                <select class='course-select' id="selectOption" name="selected_option">
+                    <option class="option" value="feedback">Відгук</option>
+                    <option class="option" value="proposal">Пропозицію</option>
+                </select>
+        </div>
+
+        <div class="form-group">
+            <label for="name">Ім'я:</label>
+            <input type="text" class="form-control" id="name" name="name" pattern="[^\d!@#$%^&*()_+={}\[\]:;<>,.?~\\/-]{1,80}"
+                   title="Ім'я повинно містити букви і не перевищувати 80 символів" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+            <label for="feedback_text">Текст:</label>
+            <textarea class="form-control-text" id="feedback_text" name="feedback_text" required></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="phone_number">Номер телефону:</label>
+            <input type="tel" class="form-control-phone" id="phone_number" name="phone_number" pattern="\d{10,16}"
+                   title="Номер телефону повинен містити 10-16 цифр">
+        </div>
+
+        <button type="submit" class="btn-send">Відправити</button>
+    </form>
+
+    <div id="confirmationMessage" style="display: none;">
+        Відправлено успішно!
+    </div>
+
+{% endblock %}
+
+{% block js_bottom %}
+     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+     <script type="text/javascript" src="{% static 'mudryk/js/feedback.js' %}"></script>
+{% endblock %}
+
+{% block footer %}
+<div class="footer">
+    <div class="row-footer">
+        <div class="column-1-footer">
+            <p class="contact-title">Контакти</p>
+            <li class="contact-list">
+                {% for phone in contact.phones.all %}
+                    <ul class="contact-item">{{ phone }}</ul>
+                {% endfor %}
+            </li>
+
+            <p class="contact-title">Email</p>
+            <li class="contact-list">
+                <ul class="contact-item">{{ contact.email }}</ul>
+            </li>
+        </div>
+        <div class="column-2-footer">
+            <div class="social-links">
+                <a class="social-link" href="{{ contact.facebook_link}}">
+                    <img src="{% static 'mudryk/images/icons8-facebook-48.png' %}" alt="Facebook">
+                </a>
+                <a class="social-link" href="{{ contact.instagram_link}}">
+                    <img src="{% static 'mudryk/images/icons8-instagram-48.png' %}" alt="Instagram">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

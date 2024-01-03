@@ -1,0 +1,47 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Центр розвитку дитини-онлайн «Маленький Мудрик»">
+    <meta name="keywords" content="Розвиток дитини Онлайн-освіта Маленький Мудрик Курси для дітей
+                                    Інтерактивні уроки Дитячий розвиток Творчість для дітей
+                                    Освітні програми Розумовий розвиток Дитячі заняття Ігровий навчання
+                                    Креативність для дітей Онлайн-тренінги Вивчення для малят Дитячі розваги">
+    {% block title %}
+        <title>Title</title>
+    {% endblock %}
+    <link rel="icon" type="image/x-icon" href="{% static 'mudryk/images/icons8-сова-justicon-flat-32.png' %}">
+    <link rel="stylesheet" href="{% static 'mudryk/css/base.css' %}">
+    {% block stylesheet %}
+    {% endblock %}
+    {% block js_top %}
+    {% endblock %}
+</head>
+<body>
+<div class="wrapper">
+    <div class="content-wrap">
+        <ul class="navbar">
+            <li class="navbar-item"><p class="navbar-title">Маленький Мудрик</p></li>
+            <li class="navbar-item"><a class="navbar-button" href="{% url 'home' %}">Головна</a></li>
+            <li class="navbar-item"><a class="navbar-button" href="{% url 'our_team' %}">Наша Команда</a></li>
+            <li class="navbar-item"><a class="navbar-button" href="{% url 'our_courses' %}">Наші курси</a></li>
+            <li class="navbar-item"><a class="navbar-button" href="{% url 'schedule' %}">Розклад уроків</a></li>
+            <li class="navbar-item"><a class="navbar-button" href="{% url 'faq' %}">FaQ</a></li>
+            <li class="navbar-item"><a class="navbar-button" href="{% url 'feedbacks' %}">Відгуки\Пропозиції</a></li>
+        </ul>
+        <div class="content">
+            {% block content %}
+
+            {% endblock %}
+        </div>
+
+        {% block js_bottom %}
+        {% endblock %}
+    </div>
+    {% block footer %}
+    {% endblock %}
+</div>
+</body>
+</html>
