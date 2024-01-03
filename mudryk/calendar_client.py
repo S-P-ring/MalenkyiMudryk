@@ -3,9 +3,6 @@ import os
 
 from google.oauth2 import service_account
 from googleapiclient.discovery import build
-from dotenv import load_dotenv
-
-load_dotenv()
 
 CALENDAR_ID = 'mudrikmalenkij@gmail.com'
 
